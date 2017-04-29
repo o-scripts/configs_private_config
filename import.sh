@@ -5,14 +5,14 @@ export LOCAL_WORKS_DIR=${BRANCH_GIT}/works
 export MSHELL=${LOCAL_WORKS_DIR}/configs/private/scriptfile
 export LOCAL_CONFIG_DIR=${LOCAL_WORKS_DIR}/configs/private/config
 # end
-
 # unterscheidliche Einstellungen
-echo works/configs/private/config - import.env.sh --ok
-source ${LOCAL_CONFIG_DIR}/import.env.sh
+source ${LOCAL_CONFIG_DIR}/env/log.sh
+
+m.log.d works/configs/private/config - import.env.sh --ok
+m.import ${LOCAL_CONFIG_DIR}/import.env.sh
 # end
 
 # self define command
-echo works/configs/private/config - import.command.sh --ok
-source ${LOCAL_CONFIG_DIR}/import.command.sh
+m.log.d works/configs/private/config - import.command.sh --ok
+m.import ${LOCAL_CONFIG_DIR}/import.command.sh
 # end
-
