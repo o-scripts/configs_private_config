@@ -8,11 +8,11 @@ export LOCAL_CONFIG_DIR=${LOCAL_WORKS_DIR}/configs/private/config
 # unterscheidliche Einstellungen
 source ${LOCAL_CONFIG_DIR}/env/log.sh
 
-m.log.d works/configs/private/config - import.env.sh --ok
+m.log.v works/configs/private/config - import.env.sh --ok
 m.import ${LOCAL_CONFIG_DIR}/import.env.sh
 # end
 
 # self define command
-m.log.d works/configs/private/config - import.command.sh --ok
+m.log.v works/configs/private/config - import.command.sh --ok
 m.import ${LOCAL_CONFIG_DIR}/import.command.sh
 # end
