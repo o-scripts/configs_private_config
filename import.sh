@@ -1,7 +1,7 @@
 #!/bin/bash
 # das ist ROOT Ordner
 export BRANCH_GIT=~/develop/branch.git
-export LOCAL_WORKS_DIR=${BRANCH_GIT}/works
+export LOCAL_WORKS_DIR=${HOME}/works
 export MSHELL=${LOCAL_WORKS_DIR}/configs/private/scriptfile
 export LOCAL_CONFIG_DIR=${LOCAL_WORKS_DIR}/configs/private/config
 # end
