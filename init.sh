@@ -1,8 +1,8 @@
 #!/bin/bash
 ## global settings
-ENV_URL="git@git.oschina.net:mr.z/configs_private_config_env.git"
+ENV_URL="https://git.oschina.net/mr.z/configs_private_config_env.git"
 ENV_LOCAL="env"
-COMMAND_URL="git@git.oschina.net:mr.z/configs_private_config_command.git"
+COMMAND_URL="https://git.oschina.net/mr.z/configs_private_config_command.git"
 COMMAND_LOCAL="command"
 
 ## task list
