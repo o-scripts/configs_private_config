@@ -15,23 +15,27 @@ m.log.d()
 	fi
     return ${RET_RUNNING_OK}
 }
+m.import()
+{
+    file=$1
+    if [[ -f $file ]]; then
+        m.log.d source $file
+        source $file
+    else
+        m.log.w $file not exist!!!
+    fi
+}
 
 # some global function, and variables
-# m.log.d source ${LOCAL_CONFIG_DIR}/env/settings.sh
-source ${LOCAL_CONFIG_DIR}/env/settings.sh
-m.log.d source ${LOCAL_CONFIG_DIR}/env/color.sh
-source ${LOCAL_CONFIG_DIR}/env/color.sh
-m.log.d source ${LOCAL_CONFIG_DIR}/env/code.sh
-source ${LOCAL_CONFIG_DIR}/env/code.sh
-m.log.d source ${LOCAL_CONFIG_DIR}/env/log.sh
-source ${LOCAL_CONFIG_DIR}/env/log.sh
+m.import ${LOCAL_CONFIG_DIR}/env/settings.sh
+m.import ${LOCAL_CONFIG_DIR}/env/color.sh
+m.import ${LOCAL_CONFIG_DIR}/env/code.sh
+m.import ${LOCAL_CONFIG_DIR}/env/log.sh
 # end
 
 # import git bash config
-m.log.d source ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
-source ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
-# m.log.d source ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
-# source ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
+m.import ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
+# m.import ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
 # end
 
 m.log.v works/configs/private/config - import.env.sh --ok
