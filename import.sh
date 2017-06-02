@@ -19,7 +19,7 @@ m.import()
 {
     file=$1
     if [[ -f $file ]]; then
-        m.log.d source $file
+        m.log.d "import - "$@
         source $file
     else
         m.log.w $file not exist!!!
@@ -38,11 +38,13 @@ m.import ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
 # m.import ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
 # end
 
-m.log.v works/configs/private/config - import.env.sh --ok
+m.log.v import: env [${BRED}✔︎${COLOR_NC}]
 m.import ${LOCAL_CONFIG_DIR}/import.env.sh
 # end
 
 # self define command
-m.log.v works/configs/private/config - import.command.sh --ok
+m.log.v import: command [${BRED}✔︎${COLOR_NC}]
 m.import ${LOCAL_CONFIG_DIR}/import.command.sh
 # end
+
+m.log.v import: config [${BRED}✔︎${COLOR_NC}]
