@@ -34,8 +34,12 @@ m.import ${LOCAL_CONFIG_DIR}/env/log.sh
 # end
 
 # import git bash config
-m.import ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
-# m.import ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
+case `uname` in
+    Darwin)
+        m.import ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
+        # m.import ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
+        ;;
+esac
 # end
 
 m.log.v import: env${COLOR_NC} [${BRED}✔︎${COLOR_NC}]
