@@ -4,7 +4,6 @@ export BRANCH_GIT=~/develop/branch.git
 export LOCAL_WORKS_DIR=${HOME}/works
 export MSHELL=${LOCAL_WORKS_DIR}/configs/private/scriptfile
 export LOCAL_CONFIG_DIR=${LOCAL_WORKS_DIR}/configs/private/config
-
 # end
 
 # unterscheidliche Einstellungen
@@ -19,10 +18,10 @@ m.import()
 {
     file=$1
     if [[ -f $file ]]; then
-        m.log.d "[1] import: "$@${COLOR_NC} [${BRED}✔︎${COLOR_NC}]
+        m.log.d "[import] import: "$@${COLOR_NC} [${BRED}✔︎${COLOR_NC}]
         source $file
     else
-        m.log.w $file not exist!!!
+        m.log.w "'"$file"'" not exist!!!
     fi
 }
 
@@ -33,22 +32,30 @@ m.import ${LOCAL_CONFIG_DIR}/env/code.sh
 m.import ${LOCAL_CONFIG_DIR}/env/log.sh
 # end
 
+# global var
+export RIGHT="${COLOR_NC}[${BGREEN} ✔ ${COLOR_NC}]"
+export ERROR="${COLOR_NC}[${BRED} ✗ ${COLOR_NC}]"
+# end
+
 # import git bash config
 case `uname` in
     Darwin)
         m.import ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
         # m.import ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
+        m.import ${LOCAL_CONFIG_DIR}/env/bash/bash_completion
+        ;;
+    'Linux')
         ;;
 esac
 # end
 
-m.log.v import: env${COLOR_NC} [${BRED}✔︎${COLOR_NC}]
+m.log.v ${RIGHT} "import: env"
 m.import ${LOCAL_CONFIG_DIR}/import.env.sh
 # end
 
 # self define command
-m.log.v import: command${COLOR_NC} [${BRED}✔︎${COLOR_NC}]
+m.log.v ${RIGHT} import: command
 m.import ${LOCAL_CONFIG_DIR}/import.command.sh
 # end
 
-m.log.v import: config${COLOR_NC} [${BRED}✔︎${COLOR_NC}]
+m.log.v ${RIGHT} import: config
