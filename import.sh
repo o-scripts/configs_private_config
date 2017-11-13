@@ -18,8 +18,9 @@ m.import()
 {
     file=$1
     if [[ -f $file ]]; then
-        m.log.d "[import] import: "$@${COLOR_NC} [${BRED}✔︎${COLOR_NC}]
+        m.log.d "[import] import: "$@
         source $file
+        m.log.d ${RIGHT} "import: ${file} finished..."
     else
         m.log.w "'"$file"'" not exist!!!
     fi
@@ -49,13 +50,13 @@ case `uname` in
 esac
 # end
 
-m.log.v ${RIGHT} "import: env"
 m.import ${LOCAL_CONFIG_DIR}/import.env.sh
+m.log.v ${RIGHT} "import: env finished..."
 # end
 
 # self define command
-m.log.v ${RIGHT} import: command
 m.import ${LOCAL_CONFIG_DIR}/import.command.sh
+m.log.v ${RIGHT} "import: command finished..."
 # end
 
-m.log.v ${RIGHT} import: config
+m.log.v ${RIGHT} "import: config finished..."
