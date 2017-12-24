@@ -1,9 +1,25 @@
 #!/bin/bash
 # das ist ROOT Ordner
-export BRANCH_GIT=~/develop/branch.git
+export LOCAL_GIT_DIR=${HOME}/develop/branch.git
 export LOCAL_WORKS_DIR=${HOME}/works
-export MSHELL=${LOCAL_WORKS_DIR}/configs/private/scriptfile
+export LOCAL_SCRIPT_DIR=${LOCAL_WORKS_DIR}/configs/private/scriptfile
 export LOCAL_CONFIG_DIR=${LOCAL_WORKS_DIR}/configs/private/config
+# end
+
+# software root Ordner
+export LOCAL_SOFT_DIR=${LOCAL_SCRIPT_DIR}/software
+export LOCAL_LIB_DIR=${LOCAL_SCRIPT_DIR}/libs
+# end
+
+# ANDROID Einstellungen
+## android Ordner
+export ANDROID_DIR=${HOME}/android
+## end
+
+## SDK und NDK
+export SDK_HOME=${ANDROID_DIR}/android-sdk
+export NDK_HOME=${SDK_HOME}/ndk-bundle
+## end
 # end
 
 # unterscheidliche Einstellungen
@@ -50,12 +66,12 @@ case `uname` in
 esac
 # end
 
-m.import ${LOCAL_CONFIG_DIR}/import.env.sh
+m.import ${LOCAL_CONFIG_DIR}/env/import.sh
 m.log.v ${RIGHT} "import: env finished..."
 # end
 
 # self define command
-m.import ${LOCAL_CONFIG_DIR}/import.command.sh
+m.import ${LOCAL_CONFIG_DIR}/command/import.sh
 m.log.v ${RIGHT} "import: command finished..."
 # end
 

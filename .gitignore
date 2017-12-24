@@ -1,4 +1,4 @@
-/command
-/env
-/private/*
+*command
+*env
+*private
 *.DS_Store
