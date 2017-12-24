@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # das ist ROOT Ordner
 export LOCAL_GIT_DIR=${HOME}/develop/branch.git
 export LOCAL_WORKS_DIR=${HOME}/works
@@ -22,53 +23,41 @@ export ANDROID_DIR=${HOME}/android
 export SDK_HOME=${ANDROID_DIR}/android-sdk
 export NDK_HOME=${SDK_HOME}/ndk-bundle
 ## end
+
+# global var
+# export RIGHT="${COLOR_NC}[${BGREEN} ✔ ${COLOR_NC}]"
+# export ERROR="${COLOR_NC}[${BRED} ✗ ${COLOR_NC}]"
 # end
 
-# unterscheidliche Einstellungen
-m.log.d()
+export DEBUG_ON=true
+export DEBUG_OFF=false
+export DEBUG=${DEBUG_OFF}
+# export DEBUG=${DEBUG_ON}
+
+# end
+
+g.log.d()
 {
 	if [ "$DEBUG_ON" = "$DEBUG" ]; then
-    	echo -e "\x1B[1;37m\x1B[42m$@\x1B[0m"
+    	echo -e "[\x1B[1;37m\x1B[42mg.D\x1B[0m] $@"
 	fi
     return ${RET_RUNNING_OK}
 }
-m.import()
+
+g.import()
 {
+    file=
     file=$1
     if [[ -f $file ]]; then
-        m.log.d "[import] import: "$@
+        g.log.d "g.import: "$@
         source $file
-        m.log.d ${RIGHT} "import: ${file} finished..."
+        g.log.d ${RIGHT} "g.import: ${file} finished..."
     else
-        m.log.w "'"$file"'" not exist!!!
+        g.log.d ${ERROR} "'"$file"'" not exist!!!
     fi
 }
 
-# some global function, and variables
-m.import ${LOCAL_CONFIG_DIR}/env/settings.sh
-m.import ${LOCAL_CONFIG_DIR}/env/color.sh
-m.import ${LOCAL_CONFIG_DIR}/env/code.sh
-m.import ${LOCAL_CONFIG_DIR}/env/log.sh
-# end
-
-# global var
-export RIGHT="${COLOR_NC}[${BGREEN} ✔ ${COLOR_NC}]"
-export ERROR="${COLOR_NC}[${BRED} ✗ ${COLOR_NC}]"
-# end
-
-# import git bash config
-case `uname` in
-    Darwin)
-        m.import ${LOCAL_CONFIG_DIR}/env/bash/git-prompt.sh
-        # m.import ${LOCAL_CONFIG_DIR}/env/bash/git-completion.bash
-        m.import ${LOCAL_CONFIG_DIR}/env/bash/bash_completion
-        ;;
-    'Linux')
-        ;;
-esac
-# end
-
-m.import ${LOCAL_CONFIG_DIR}/env/import.sh
+g.import ${LOCAL_CONFIG_DIR}/env/import.sh
 m.log.v ${RIGHT} "import: env finished..."
 # end
 
