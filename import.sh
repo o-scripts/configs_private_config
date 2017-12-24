@@ -4,6 +4,8 @@ export LOCAL_GIT_DIR=${HOME}/develop/branch.git
 export LOCAL_WORKS_DIR=${HOME}/works
 export LOCAL_SCRIPT_DIR=${LOCAL_WORKS_DIR}/configs/private/scriptfile
 export LOCAL_CONFIG_DIR=${LOCAL_WORKS_DIR}/configs/private/config
+export LOCAL_ENV_DIR=${LOCAL_WORKS_DIR}/configs/private/config/env
+export LOCAL_COMMAND_DIR=${LOCAL_WORKS_DIR}/configs/private/config/command
 # end
 
 # software root Ordner
