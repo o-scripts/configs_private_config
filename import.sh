@@ -36,6 +36,11 @@ export DEBUG=${DEBUG_OFF}
 
 # end
 
+function m.git()
+{
+    git branch 2>/dev/null | grep \* | awk '{print $2" *"}'
+}
+
 g.log.d()
 {
 	if [ "$DEBUG_ON" = "$DEBUG" ]; then
