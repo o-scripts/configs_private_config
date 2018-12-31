@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# working space
+export LOCAL_WORKING=${HOME}/working
+
 # das ist ROOT Ordner
 export LOCAL_GIT_DIR=${HOME}/develop/branch.git
 export LOCAL_WORKS_DIR=${HOME}/works
@@ -61,6 +64,8 @@ g.import()
         g.log.d ${ERROR} "'"$file"'" not exist!!!
     fi
 }
+
+cd ${LOCAL_WORKING}
 
 g.import ${LOCAL_CONFIG_DIR}/env/import.sh
 m.log.v ${RIGHT} "import: env finished..."
