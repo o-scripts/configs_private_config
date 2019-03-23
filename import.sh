@@ -46,9 +46,9 @@ function m.git()
 
 g.log.d()
 {
-	if [ "$DEBUG_ON" = "$DEBUG" ]; then
-    	echo -e "[\x1B[1;37m\x1B[42mg.D\x1B[0m] $@"
-	fi
+    if [ "$DEBUG_ON" = "$DEBUG" ]; then
+        echo -e "D $@"
+    fi
     return ${RET_RUNNING_OK}
 }
 
