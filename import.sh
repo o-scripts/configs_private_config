@@ -65,7 +65,7 @@ g.import()
     fi
 }
 
-cd ${LOCAL_WORKING}
+#cd ${LOCAL_WORKING}
 
 g.import ${LOCAL_CONFIG_DIR}/env/import.sh
 m.log.v ${RIGHT} "import: env finished..."
