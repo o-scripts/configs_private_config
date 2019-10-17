@@ -2,3 +2,9 @@
 *env
 *private
 *.DS_Store
+/oh-my-zsh/
+/spf13-vim-3/
+
+
+/*.code-workspace
+
