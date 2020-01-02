@@ -68,12 +68,12 @@ g.import()
 #cd ${LOCAL_WORKING}
 
 g.import ${LOCAL_CONFIG_DIR}/env/import.sh
-m.log.v ${RIGHT} "import: env finished..."
+m.log.d ${RIGHT} "import: env finished..."
 # end
 
 # self define command
 m.import ${LOCAL_CONFIG_DIR}/command/import.sh
-m.log.v ${RIGHT} "import: command finished..."
+m.log.d ${RIGHT} "import: command finished..."
 # end
 
-m.log.v ${RIGHT} "import: config finished..."
+m.log.d ${RIGHT} "import: config finished..."
