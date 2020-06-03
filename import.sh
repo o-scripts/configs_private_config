@@ -17,16 +17,6 @@ export LOCAL_SOFT_DIR=${LOCAL_SCRIPT_DIR}/software
 export LOCAL_LIB_DIR=${LOCAL_SCRIPT_DIR}/libs
 # end
 
-# ANDROID Einstellungen
-## android Ordner
-export ANDROID_DIR=${HOME}/android
-## end
-
-## SDK und NDK
-export SDK_HOME=${ANDROID_DIR}/android-sdk
-export NDK_HOME=${SDK_HOME}/ndk-bundle
-## end
-
 # global var
 # export RIGHT="${COLOR_NC}[${BGREEN} ✔ ${COLOR_NC}]"
 # export ERROR="${COLOR_NC}[${BRED} ✗ ${COLOR_NC}]"
@@ -54,7 +44,6 @@ g.log.d()
 
 g.import()
 {
-    file=
     file=$1
     if [[ -f $file ]]; then
         g.log.d "g.import: "$@
@@ -67,7 +56,8 @@ g.import()
 
 #cd ${LOCAL_WORKING}
 
-g.import ${LOCAL_CONFIG_DIR}/env/import.sh
+source ${LOCAL_CONFIG_DIR}/env/import.sh
+#g.import ${LOCAL_CONFIG_DIR}/env/import.sh
 m.log.d ${RIGHT} "import: env finished..."
 # end
 
